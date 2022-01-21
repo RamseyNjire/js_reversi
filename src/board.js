@@ -60,7 +60,7 @@ Board.prototype.getPiece = function (pos) {
  * matches a given color.
  */
 Board.prototype.isMine = function (pos, color) {
-  piece = this.getPiece(pos);
+  const piece = this.getPiece(pos);
 
   return typeof piece !== 'undefined' && piece.color === color;
 };
@@ -69,6 +69,9 @@ Board.prototype.isMine = function (pos, color) {
  * Checks if a given position has a piece on it.
  */
 Board.prototype.isOccupied = function (pos) {
+  const piece = this.getPiece(pos);
+
+  return typeof piece !== 'undefined';
 };
 
 /**
