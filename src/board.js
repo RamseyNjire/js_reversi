@@ -159,6 +159,18 @@ Board.prototype.placePiece = function (pos, color) {
  * the Board for a given color.
  */
 Board.prototype.validMoves = function (color) {
+  let validMoves = [];
+
+  for(let row = 0; row < 8; row++){
+    for(let column = 0; column < 8; column++){
+      let pos = [row, column];
+      if(this.validMove(pos, color)){
+        validMoves.push(pos);
+      }
+    }
+  }
+
+  return validMoves;
 };
 
 /**
