@@ -47,7 +47,7 @@ Game.prototype.play = function () {
 Game.prototype.playTurn = function (callback) {
   this.board.print();
   rlInterface.question(
-    `${this.turn}, where do you want to move?`,
+    `${this.turn}, where do you want to move? [x, y]: `,
     handleResponse.bind(this)
   );
 
